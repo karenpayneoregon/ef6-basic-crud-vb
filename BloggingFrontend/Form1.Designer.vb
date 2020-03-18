@@ -29,9 +29,10 @@ Partial Class Form1
         Me.TitleColumn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContentsColum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.RemoveCurrentButton = New System.Windows.Forms.Button()
         Me.CurrentPostButton = New System.Windows.Forms.Button()
         Me.PopulateFirstTabButton = New System.Windows.Forms.Button()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.EditCurrentTabPage = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.UpdatePostButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -42,18 +43,18 @@ Partial Class Form1
         Me.UpdateUrlButton = New System.Windows.Forms.Button()
         Me.CurrentUrlTextBox = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.NewBlogUrlTextBox = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.FirstPostTitleTextBox = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.FirstPostContentTextBox = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.AddNewBlogSinglePostButton = New System.Windows.Forms.Button()
-        Me.RemoveCurrentButton = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.FirstPostContentTextBox = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.FirstPostTitleTextBox = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.NewBlogUrlTextBox = New System.Windows.Forms.TextBox()
+        Me.EditCurrentButton = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.EditCurrentTabPage.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -62,21 +63,21 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 324)
+        Me.Panel1.Location = New System.Drawing.Point(0, 358)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(891, 63)
+        Me.Panel1.Size = New System.Drawing.Size(891, 29)
         Me.Panel1.TabIndex = 0
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.EditCurrentTabPage)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(891, 324)
+        Me.TabControl1.Size = New System.Drawing.Size(891, 358)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -86,7 +87,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(883, 298)
+        Me.TabPage1.Size = New System.Drawing.Size(883, 332)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "All Blogs/Post"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -99,7 +100,7 @@ Partial Class Form1
         Me.BlogListView.Location = New System.Drawing.Point(3, 3)
         Me.BlogListView.MultiSelect = False
         Me.BlogListView.Name = "BlogListView"
-        Me.BlogListView.Size = New System.Drawing.Size(877, 248)
+        Me.BlogListView.Size = New System.Drawing.Size(877, 282)
         Me.BlogListView.TabIndex = 2
         Me.BlogListView.UseCompatibleStateImageBehavior = False
         Me.BlogListView.View = System.Windows.Forms.View.Details
@@ -114,18 +115,28 @@ Partial Class Form1
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.EditCurrentButton)
         Me.Panel2.Controls.Add(Me.RemoveCurrentButton)
         Me.Panel2.Controls.Add(Me.CurrentPostButton)
         Me.Panel2.Controls.Add(Me.PopulateFirstTabButton)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(3, 251)
+        Me.Panel2.Location = New System.Drawing.Point(3, 285)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(877, 44)
         Me.Panel2.TabIndex = 1
         '
+        'RemoveCurrentButton
+        '
+        Me.RemoveCurrentButton.Location = New System.Drawing.Point(261, 9)
+        Me.RemoveCurrentButton.Name = "RemoveCurrentButton"
+        Me.RemoveCurrentButton.Size = New System.Drawing.Size(98, 23)
+        Me.RemoveCurrentButton.TabIndex = 4
+        Me.RemoveCurrentButton.Text = "Delete Current"
+        Me.RemoveCurrentButton.UseVisualStyleBackColor = True
+        '
         'CurrentPostButton
         '
-        Me.CurrentPostButton.Location = New System.Drawing.Point(135, 9)
+        Me.CurrentPostButton.Location = New System.Drawing.Point(5, 9)
         Me.CurrentPostButton.Name = "CurrentPostButton"
         Me.CurrentPostButton.Size = New System.Drawing.Size(98, 23)
         Me.CurrentPostButton.TabIndex = 3
@@ -134,24 +145,24 @@ Partial Class Form1
         '
         'PopulateFirstTabButton
         '
-        Me.PopulateFirstTabButton.Location = New System.Drawing.Point(10, 9)
+        Me.PopulateFirstTabButton.Location = New System.Drawing.Point(389, 9)
         Me.PopulateFirstTabButton.Name = "PopulateFirstTabButton"
         Me.PopulateFirstTabButton.Size = New System.Drawing.Size(98, 23)
         Me.PopulateFirstTabButton.TabIndex = 0
         Me.PopulateFirstTabButton.Text = "Refresh"
         Me.PopulateFirstTabButton.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'EditCurrentTabPage
         '
-        Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(883, 298)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Edit current blog"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.EditCurrentTabPage.Controls.Add(Me.GroupBox2)
+        Me.EditCurrentTabPage.Controls.Add(Me.GroupBox1)
+        Me.EditCurrentTabPage.Location = New System.Drawing.Point(4, 22)
+        Me.EditCurrentTabPage.Name = "EditCurrentTabPage"
+        Me.EditCurrentTabPage.Padding = New System.Windows.Forms.Padding(3)
+        Me.EditCurrentTabPage.Size = New System.Drawing.Size(883, 332)
+        Me.EditCurrentTabPage.TabIndex = 1
+        Me.EditCurrentTabPage.Text = "Edit current blog"
+        Me.EditCurrentTabPage.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -252,44 +263,14 @@ Partial Class Form1
         Me.TabPage3.Text = "Add new blog and post"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'NewBlogUrlTextBox
+        'AddNewBlogSinglePostButton
         '
-        Me.NewBlogUrlTextBox.Location = New System.Drawing.Point(25, 40)
-        Me.NewBlogUrlTextBox.Name = "NewBlogUrlTextBox"
-        Me.NewBlogUrlTextBox.Size = New System.Drawing.Size(743, 20)
-        Me.NewBlogUrlTextBox.TabIndex = 2
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 18)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(20, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Url"
-        '
-        'FirstPostTitleTextBox
-        '
-        Me.FirstPostTitleTextBox.Location = New System.Drawing.Point(25, 95)
-        Me.FirstPostTitleTextBox.Name = "FirstPostTitleTextBox"
-        Me.FirstPostTitleTextBox.Size = New System.Drawing.Size(743, 20)
-        Me.FirstPostTitleTextBox.TabIndex = 4
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 79)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "First post Title"
-        '
-        'FirstPostContentTextBox
-        '
-        Me.FirstPostContentTextBox.Location = New System.Drawing.Point(25, 150)
-        Me.FirstPostContentTextBox.Name = "FirstPostContentTextBox"
-        Me.FirstPostContentTextBox.Size = New System.Drawing.Size(743, 20)
-        Me.FirstPostContentTextBox.TabIndex = 6
+        Me.AddNewBlogSinglePostButton.Location = New System.Drawing.Point(25, 191)
+        Me.AddNewBlogSinglePostButton.Name = "AddNewBlogSinglePostButton"
+        Me.AddNewBlogSinglePostButton.Size = New System.Drawing.Size(75, 23)
+        Me.AddNewBlogSinglePostButton.TabIndex = 8
+        Me.AddNewBlogSinglePostButton.Text = "Add"
+        Me.AddNewBlogSinglePostButton.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -300,23 +281,53 @@ Partial Class Form1
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "First post content"
         '
-        'AddNewBlogSinglePostButton
+        'FirstPostContentTextBox
         '
-        Me.AddNewBlogSinglePostButton.Location = New System.Drawing.Point(25, 191)
-        Me.AddNewBlogSinglePostButton.Name = "AddNewBlogSinglePostButton"
-        Me.AddNewBlogSinglePostButton.Size = New System.Drawing.Size(75, 23)
-        Me.AddNewBlogSinglePostButton.TabIndex = 8
-        Me.AddNewBlogSinglePostButton.Text = "Add"
-        Me.AddNewBlogSinglePostButton.UseVisualStyleBackColor = True
+        Me.FirstPostContentTextBox.Location = New System.Drawing.Point(25, 150)
+        Me.FirstPostContentTextBox.Name = "FirstPostContentTextBox"
+        Me.FirstPostContentTextBox.Size = New System.Drawing.Size(743, 20)
+        Me.FirstPostContentTextBox.TabIndex = 6
         '
-        'RemoveCurrentButton
+        'Label4
         '
-        Me.RemoveCurrentButton.Location = New System.Drawing.Point(260, 9)
-        Me.RemoveCurrentButton.Name = "RemoveCurrentButton"
-        Me.RemoveCurrentButton.Size = New System.Drawing.Size(98, 23)
-        Me.RemoveCurrentButton.TabIndex = 4
-        Me.RemoveCurrentButton.Text = "Delete Current"
-        Me.RemoveCurrentButton.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(27, 79)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 13)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "First post Title"
+        '
+        'FirstPostTitleTextBox
+        '
+        Me.FirstPostTitleTextBox.Location = New System.Drawing.Point(25, 95)
+        Me.FirstPostTitleTextBox.Name = "FirstPostTitleTextBox"
+        Me.FirstPostTitleTextBox.Size = New System.Drawing.Size(743, 20)
+        Me.FirstPostTitleTextBox.TabIndex = 4
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(27, 18)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(20, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Url"
+        '
+        'NewBlogUrlTextBox
+        '
+        Me.NewBlogUrlTextBox.Location = New System.Drawing.Point(25, 40)
+        Me.NewBlogUrlTextBox.Name = "NewBlogUrlTextBox"
+        Me.NewBlogUrlTextBox.Size = New System.Drawing.Size(743, 20)
+        Me.NewBlogUrlTextBox.TabIndex = 2
+        '
+        'EditCurrentButton
+        '
+        Me.EditCurrentButton.Location = New System.Drawing.Point(133, 9)
+        Me.EditCurrentButton.Name = "EditCurrentButton"
+        Me.EditCurrentButton.Size = New System.Drawing.Size(98, 23)
+        Me.EditCurrentButton.TabIndex = 5
+        Me.EditCurrentButton.Text = "Edit Current"
+        Me.EditCurrentButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -332,7 +343,7 @@ Partial Class Form1
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
+        Me.EditCurrentTabPage.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -346,7 +357,7 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents EditCurrentTabPage As TabPage
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PopulateFirstTabButton As Button
     Friend WithEvents BlogListView As ListView
@@ -371,4 +382,5 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents NewBlogUrlTextBox As TextBox
     Friend WithEvents RemoveCurrentButton As Button
+    Friend WithEvents EditCurrentButton As Button
 End Class

@@ -4,6 +4,8 @@ The model used and code samples are based off C# code samples from Microsoft fou
 
 Rather than expand the model to include some missing columns e.g. URL for post they were not added to keep inline with the original code samples in C#.
 
+[Microsoft TechNet article](https://social.technet.microsoft.com/wiki/contents/articles/53700.entity-framework-6-basic-data-operations-vb-net-window-forms.aspx)
+
 **Requires**
 SQL-Server installed, Visual Studio 2017 or higher
 

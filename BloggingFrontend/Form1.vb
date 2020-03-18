@@ -9,6 +9,11 @@ Public Class Form1
     ''' </summary>
     Private _blogListViewSelectedIndex As Integer = 0
 
+    ''' <summary>
+    ''' Populate ListView with a blogs in groups
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         PopulateAllBlogsTab()
     End Sub
@@ -28,7 +33,6 @@ Public Class Form1
 
             Dim index As Integer = 0
             Dim groupName As String = ""
-
 
             Dim blogs = _context.Blogs.ToList()
             For Each blog As Blog In blogs
@@ -280,5 +284,13 @@ Public Class Form1
 
         End If
 
+    End Sub
+    ''' <summary>
+    ''' Change from main tab to edit table
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub EditCurrentButton_Click(sender As Object, e As EventArgs) Handles EditCurrentButton.Click
+        TabControl1.SelectedTab = EditCurrentTabPage
     End Sub
 End Class
