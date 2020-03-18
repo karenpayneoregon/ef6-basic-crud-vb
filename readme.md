@@ -4,6 +4,9 @@ The model used and code samples are based off C# code samples from Microsoft fou
 
 Rather than expand the model to include some missing columns e.g. URL for post they were not added to keep inline with the original code samples in C#.
 
+**Requires**
+SQL-Server installed, Visual Studio 2017 or higher
+
 **Main screen**
 ![Main screen](assets/MainTab.png)
 
