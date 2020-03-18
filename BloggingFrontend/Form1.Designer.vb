@@ -165,7 +165,7 @@ Partial Class Form1
         Me.GroupBox2.Size = New System.Drawing.Size(857, 142)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Current post"
         '
         'UpdatePostButton
         '
