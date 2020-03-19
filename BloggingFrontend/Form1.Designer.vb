@@ -29,6 +29,7 @@ Partial Class Form1
         Me.TitleColumn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ContentsColum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.EditCurrentButton = New System.Windows.Forms.Button()
         Me.RemoveCurrentButton = New System.Windows.Forms.Button()
         Me.CurrentPostButton = New System.Windows.Forms.Button()
         Me.PopulateFirstTabButton = New System.Windows.Forms.Button()
@@ -50,7 +51,9 @@ Partial Class Form1
         Me.FirstPostTitleTextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.NewBlogUrlTextBox = New System.Windows.Forms.TextBox()
-        Me.EditCurrentButton = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.UpdateBlogNameButton = New System.Windows.Forms.Button()
+        Me.CurrentBlogNameTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -58,6 +61,7 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -125,6 +129,15 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(877, 44)
         Me.Panel2.TabIndex = 1
         '
+        'EditCurrentButton
+        '
+        Me.EditCurrentButton.Location = New System.Drawing.Point(133, 9)
+        Me.EditCurrentButton.Name = "EditCurrentButton"
+        Me.EditCurrentButton.Size = New System.Drawing.Size(98, 23)
+        Me.EditCurrentButton.TabIndex = 5
+        Me.EditCurrentButton.Text = "Edit Current"
+        Me.EditCurrentButton.UseVisualStyleBackColor = True
+        '
         'RemoveCurrentButton
         '
         Me.RemoveCurrentButton.Location = New System.Drawing.Point(261, 9)
@@ -154,6 +167,7 @@ Partial Class Form1
         '
         'EditCurrentTabPage
         '
+        Me.EditCurrentTabPage.Controls.Add(Me.GroupBox3)
         Me.EditCurrentTabPage.Controls.Add(Me.GroupBox2)
         Me.EditCurrentTabPage.Controls.Add(Me.GroupBox1)
         Me.EditCurrentTabPage.Location = New System.Drawing.Point(4, 22)
@@ -171,7 +185,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.CurrentPostContentTextBox)
         Me.GroupBox2.Controls.Add(Me.CurrentPostTitleTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 104)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 178)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(857, 142)
         Me.GroupBox2.TabIndex = 8
@@ -223,7 +237,7 @@ Partial Class Form1
         '
         Me.GroupBox1.Controls.Add(Me.UpdateUrlButton)
         Me.GroupBox1.Controls.Add(Me.CurrentUrlTextBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 24)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 98)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(858, 64)
         Me.GroupBox1.TabIndex = 3
@@ -258,7 +272,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(883, 298)
+        Me.TabPage3.Size = New System.Drawing.Size(883, 332)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Add new blog and post"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -320,14 +334,32 @@ Partial Class Form1
         Me.NewBlogUrlTextBox.Size = New System.Drawing.Size(743, 20)
         Me.NewBlogUrlTextBox.TabIndex = 2
         '
-        'EditCurrentButton
+        'GroupBox3
         '
-        Me.EditCurrentButton.Location = New System.Drawing.Point(133, 9)
-        Me.EditCurrentButton.Name = "EditCurrentButton"
-        Me.EditCurrentButton.Size = New System.Drawing.Size(98, 23)
-        Me.EditCurrentButton.TabIndex = 5
-        Me.EditCurrentButton.Text = "Edit Current"
-        Me.EditCurrentButton.UseVisualStyleBackColor = True
+        Me.GroupBox3.Controls.Add(Me.UpdateBlogNameButton)
+        Me.GroupBox3.Controls.Add(Me.CurrentBlogNameTextBox)
+        Me.GroupBox3.Location = New System.Drawing.Point(7, 11)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(858, 64)
+        Me.GroupBox3.TabIndex = 9
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Current name"
+        '
+        'UpdateBlogNameButton
+        '
+        Me.UpdateBlogNameButton.Location = New System.Drawing.Point(777, 17)
+        Me.UpdateBlogNameButton.Name = "UpdateBlogNameButton"
+        Me.UpdateBlogNameButton.Size = New System.Drawing.Size(75, 23)
+        Me.UpdateBlogNameButton.TabIndex = 2
+        Me.UpdateBlogNameButton.Text = "Update"
+        Me.UpdateBlogNameButton.UseVisualStyleBackColor = True
+        '
+        'CurrentBlogNameTextBox
+        '
+        Me.CurrentBlogNameTextBox.Location = New System.Drawing.Point(28, 20)
+        Me.CurrentBlogNameTextBox.Name = "CurrentBlogNameTextBox"
+        Me.CurrentBlogNameTextBox.Size = New System.Drawing.Size(743, 20)
+        Me.CurrentBlogNameTextBox.TabIndex = 1
         '
         'Form1
         '
@@ -350,6 +382,8 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -383,4 +417,7 @@ Partial Class Form1
     Friend WithEvents NewBlogUrlTextBox As TextBox
     Friend WithEvents RemoveCurrentButton As Button
     Friend WithEvents EditCurrentButton As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents UpdateBlogNameButton As Button
+    Friend WithEvents CurrentBlogNameTextBox As TextBox
 End Class

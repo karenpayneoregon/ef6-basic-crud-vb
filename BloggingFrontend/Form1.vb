@@ -42,7 +42,7 @@ Public Class Form1
 
                 Dim currentGroup = New ListViewGroup(blog.BlogId.ToString(),
                     HorizontalAlignment.Left) With {
-                        .Header = blog.Url,
+                        .Header = blog.Display,
                         .Name = groupName
                     }
 
@@ -134,6 +134,8 @@ Public Class Form1
             Dim postTag = CType(BlogListView.SelectedItems(0).Tag, PostTag)
             Dim blog As Blog = _context.Blogs.Find(postTag.BlogId)
 
+            CurrentBlogNameTextBox.Text = blog.BlogName
+
             CurrentUrlTextBox.Tag = postTag
             CurrentUrlTextBox.Text = blog.Url
 
@@ -144,6 +146,23 @@ Public Class Form1
             CurrentPostContentTextBox.Text = post.Content
 
         End If
+
+    End Sub
+    Private Sub UpdateBlogNameButton_Click(sender As Object, e As EventArgs) _
+        Handles UpdateBlogNameButton.Click
+
+        Dim blog As Blog = _context.Blogs.Find(CType(CurrentUrlTextBox.Tag, PostTag).BlogId)
+        blog.BlogName = CurrentBlogNameTextBox.Text
+
+        '
+        ' Update database - note there is no assertion of empty value
+        '
+        _context.SaveChanges()
+
+        '
+        ' Update ListView
+        '
+        BlogListView.SelectedItems(0).Group.Header = blog.Display
 
     End Sub
     ''' <summary>
@@ -165,7 +184,7 @@ Public Class Form1
         '
         ' Update ListView
         '
-        BlogListView.SelectedItems(0).Group.Header = CurrentUrlTextBox.Text
+        BlogListView.SelectedItems(0).Group.Header = blog.Display
 
     End Sub
     ''' <summary>
@@ -293,4 +312,6 @@ Public Class Form1
     Private Sub EditCurrentButton_Click(sender As Object, e As EventArgs) Handles EditCurrentButton.Click
         TabControl1.SelectedTab = EditCurrentTabPage
     End Sub
+
+
 End Class

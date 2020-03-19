@@ -15,6 +15,13 @@ Namespace Models
         Public Property BlogId As Integer
 
         Public Property Url As String
+        Public Property BlogName As String
+
+        Public ReadOnly Property Display() As String
+            Get
+                Return $"{BlogName}: {Url}"
+            End Get
+        End Property
 
         Public Overridable Property Posts As ICollection(Of Post)
     End Class
