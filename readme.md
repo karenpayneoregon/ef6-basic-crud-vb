@@ -1,4 +1,4 @@
-# Entity Framework (VB.NET) - getting started
+# Entity Framework (VB.NET) - getting started part 2
 
 The model used and code samples are based off C# code samples from Microsoft found under [the following page](https://docs.microsoft.com/en-us/ef/) which has been done as there are no VB.NET code samples. 
 
